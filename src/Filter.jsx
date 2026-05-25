@@ -244,99 +244,111 @@ export default function Filter() {
             image: "https://randomuser.me/api/portraits/women/20.jpg"
         }
     ];
-const filteredStudents = students.filter((student) =>
-  student.name.toLowerCase().includes(search.toLowerCase()) ||
-  student.branch.toLowerCase().includes(search.toLowerCase())
-)
+    const filteredStudents = students.filter((student) =>
+        student.name.toLowerCase().includes(search.toLowerCase()) ||
+        student.branch.toLowerCase().includes(search.toLowerCase())
+    )
     return (
 
-<div className="p-5">
+        <div className="p-5">
 
-    <h1 className="text-5xl font-bold text-center mb-10">
-        Students Data
-    </h1>
+            <h1 className="text-5xl font-bold text-center mb-10">
+                Students Data
+            </h1>
 
-    <input 
-        type="text"
-        placeholder="Search Here"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="border p-2 w-100 mb-5"
-    />
+            <input
+                type="text"
+                placeholder="Search Here"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="border p-2 w-100 mb-5"
+            />
 
-    <table className="w-full border border-black">
+            <table className="w-full border border-black">
 
-        <thead className="bg-black text-white">
+                <thead className="bg-black text-white">
 
-            <tr>
+                    <tr>
 
-                <th className="border p-3">ID</th>
-                <th className="border p-3">Image</th>
-                <th className="border p-3">Name</th>
-                <th className="border p-3">Age</th>
-                <th className="border p-3">Branch</th>
-                <th className="border p-3">City</th>
-                <th className="border p-3">Gender</th>
-                <th className="border p-3">Contact</th>
+                        <th className="border p-3">ID</th>
+                        <th className="border p-3">Image</th>
+                        <th className="border p-3">Name</th>
+                        <th className="border p-3">Age</th>
+                        <th className="border p-3">Branch</th>
+                        <th className="border p-3">City</th>
+                        <th className="border p-3">Gender</th>
+                        <th className="border p-3">Contact</th>
+                        <th className="border p-3">Father Name</th>
+                        <th className="border p-3">Email</th>
 
-            </tr>
 
-        </thead>
-
-        <tbody>
-
-            {
-                filteredStudents.map((student) => (
-
-                    <tr key={student.id}>
-
-                        <td className="border p-3">
-                            {student.id}
-                        </td>
-
-                        <td className="border p-3">
-
-                            <img
-                                src={student.image}
-                                alt={student.name}
-                                className="w-16 h-16"
-                            />
-
-                        </td>
-
-                        <td className="border p-3">
-                            {student.name}
-                        </td>
-
-                        <td className="border p-3">
-                            {student.age}
-                        </td>
-
-                        <td className="border p-3">
-                            {student.branch}
-                        </td>
-
-                        <td className="border p-3">
-                            {student.city}
-                        </td>
-
-                        <td className="border p-3">
-                            {student.gender}
-                        </td>
-
-                        <td className="border p-3">
-                            {student.contact}
-                        </td>
 
                     </tr>
 
-                ))
-            }
+                </thead>
 
-        </tbody>
+                <tbody>
 
-    </table>
+                    {
+                        filteredStudents.map((student) => (
 
-</div>
+                            <tr key={student.id}>
 
-    )}
+                                <td className="border p-3">
+                                    {student.id}
+                                </td>
+
+                                <td className="border p-3">
+
+                                    <img
+                                        src={student.image}
+                                        alt={student.name}
+                                        className="w-16 h-16"
+                                    />
+
+                                </td>
+
+                                <td className="border p-3">
+                                    {student.name}
+                                </td>
+
+                                <td className="border p-3">
+                                    {student.age}
+                                </td>
+
+                                <td className="border p-3">
+                                    {student.branch}
+                                </td>
+
+                                <td className="border p-3">
+                                    {student.city}
+                                </td>
+
+                                <td className="border p-3">
+                                    {student.gender}
+                                </td>
+                                <td className="border p-3">
+                                    {student.contact}
+                                </td>
+                                <td className="border p-3">
+                                    {student.fatherName}
+                                </td>
+
+
+                                <td className="border p-3">
+                                    {student.email}
+                                </td>
+
+                            </tr>
+
+                        ))
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    )
+}
